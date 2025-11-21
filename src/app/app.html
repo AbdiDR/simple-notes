@@ -1,26 +1,31 @@
 <div class="container">
-  <h1>Simple Notes</h1>
+  <h1>Simple Notes</h1>
 
-  <div class="input-section">
-    <input [(ngModel)]="newTitle" placeholder="Judul..." />
-    <textarea [(ngModel)]="newContent" placeholder="Isi..." rows="3"></textarea>
-    <button (click)="addNote()">Tambah Catatan</button>
-  </div>
+  <div class="input-section">
+    <input [(ngModel)]="newTitle" placeholder="Judul..." />
+    <textarea [(ngModel)]="newContent" placeholder="Isi..." rows="3"></textarea>
+    <button (click)="addNote()">Tambah Catatan</button>
+  </div>
 
+  @if (notes.length > 0) {
+    <ul class="notes-list-wrapper">
+      @for (note of notes; track note.id) {
+        <li class="note-item">
+          <div class="note-text">
+            <small class="date">
+              {{ note.createdDate | date:'dd MMMM yyyy, HH:mm':'':'id' }}
+            </small>
 
-  @if (notes.length > 0) { 
-    <ul class="notes-list-wrapper"> 
-      @for (note of notes; track note.id) {
-        <li class="note-item">
-          <div class="note-text">
-            <h3>{{ note.title }}</h3>
-            <p>{{ note.content }}</p>
-          </div>
-          <button class="delete" (click)="deleteNote(note.id)">Hapus</button>
-        </li>
-      }
-    </ul> 
-  } @else {
-        <p>Tidak ada catatan.</p>
-  }
+            <h3>{{ note.title }}</h3>
+
+            <p>{{ note.content }}</p>
+          </div>
+
+          <button class="delete" (click)="deleteNote(note.id)">Hapus</button>
+        </li>
+      }
+    </ul>
+  } @else {
+    <p class="no-notes">Tidak ada catatan.</p>
+  }
 </div>

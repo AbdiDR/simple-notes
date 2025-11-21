@@ -2,6 +2,51 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0.
 
+## 🚀 Quick Start
+
+### Prerequisites
+
+- **Node.js** (v18 or higher) - [Download here](https://nodejs.org/)
+- **npm** (comes with Node.js)
+- **Angular CLI** (v17 or higher)
+
+```bash
+npm install -g @angular/cli
+```
+
+### Installation & Setup
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <https://github.com/AbdiDR/simple-notes.git>
+   cd simple-notes
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+
+   ```bash
+   ng serve
+   ```
+
+4. **Open your browser**
+   ```
+   http://localhost:4200
+   ```
+
+## 🎯 Application Features
+
+- ✅ **Create Notes** - Add new notes with title and content
+- ✅ **View Notes** - Display all notes in a responsive grid
+- ✅ **Delete Notes** - Remove notes with confirmation
+- ✅ **Form Validation** - Ensures that the Title and Content inputs are not empty.
+
 ## Development server
 
 To start a local development server, run:

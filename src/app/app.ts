@@ -2,11 +2,12 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { NoteService } from './services/note.service';
 import { Note } from './models/note';
 import { FormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, DatePipe],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -27,7 +28,10 @@ export class App implements OnInit {
   loadNotes() {
     this.noteService.getAllNotes().subscribe({
       next: data => {
-        this.notes = data;
+        this.notes = data.map(note=> ({
+          ...note,
+          createdDate: new Date(note.createdDate)
+        }));
         this.cd.detectChanges();
       },
       error: err => {
