@@ -1,0 +1,55 @@
+.container {
+  max-width: 480px;
+  margin: auto;
+  text-align: center;
+  font-family: Arial;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  background: #f0f0f0;
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.note-text {
+  text-align: left;
+}
+
+.note-text h3 {
+  margin: 0 0 4px 0;
+}
+
+button.delete {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 4px;
+}
